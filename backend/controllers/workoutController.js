@@ -86,7 +86,7 @@ const updateWorkout = async (req, res) => {
       res.status(404).json({error: 'Invalid Id Format'})
     }
     const workoutToUpdate = await Workout.findOneAndUpdate({_id: id}, {
-      ...req.body})
+      ...req.body}, {new: true})
     if(!workoutToUpdate) {
       res.status(400).json({error: 'No such Workout'})
     } else {

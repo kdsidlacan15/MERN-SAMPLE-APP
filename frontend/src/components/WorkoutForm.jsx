@@ -78,7 +78,7 @@ const handleSubmit = async (e) => {
           reps: e.target.value
         })}
         value={newWorkout.reps}
-        className={emptyFields.includes('reps') ? 'error' : ''}
+        className={emptyFields.includes('title') ? 'error' : ''}
       />
 
         {loading ? <div className="loading">{loading}</div> : <button>Add Workout</button> }

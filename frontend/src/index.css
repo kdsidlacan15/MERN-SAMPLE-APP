@@ -64,7 +64,7 @@ header a {
   color: #555;
 }
 
-.workout-details span {
+#delete-button {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -73,6 +73,17 @@ header a {
   padding: 6px;
   border-radius: 50%;
   color: #333;
+}
+
+#edit-button {
+  position: absolute;
+  top: 20px;
+  right: 70px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #d3bc11;
 }
 
 /* new workout form */
@@ -143,15 +154,87 @@ span.delete-button {
   cursor: pointer;
 }
 
-/* span.delete-button:hover {
-  background-color: #d32f2f;
-}
-
-span.delete-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.3);
-} */
-
 input.error {
   border: 1px solid var(--error)
+}
+
+/* Edit Form Card */
+div.edit-card {
+  background: #fff;
+  padding: 20px;
+  z-index: 15;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  
+}
+
+.edit-card h3 {
+  margin-top: 0;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.edit-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-card label {
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+
+.edit-card input[type="text"],
+.edit-card input[type="number"],
+.edit-card textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.edit-card .form-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit-card #save-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  margin-right: 10px;
+  background-color: var(--primary);
+}
+
+.edit-card #disabled-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #cccccc; 
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.edit-card #cancel-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  margin-left: 10px;
+  background-color: #f94407;
 }
