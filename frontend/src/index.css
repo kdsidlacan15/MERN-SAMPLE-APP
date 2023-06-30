@@ -99,6 +99,14 @@ form button {
   border-radius: 4px;
   cursor: pointer;
 }
+form button:hover {
+  background-color: #20a13a;
+}
+
+form button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.3);
+}
 
 div.error {
   padding: 10px;
@@ -122,4 +130,24 @@ div.loading {
 @keyframes spin {
   0% { transform: rotate(0deg); } /* Start the rotation at 0 degrees */
   100% { transform: rotate(360deg); } /* End the rotation at 360 degrees */
+}
+
+
+/* Delete Button style */
+span.delete-button {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+span.delete-button:hover {
+  background-color: #d32f2f;
+}
+
+span.delete-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.3);
 }
