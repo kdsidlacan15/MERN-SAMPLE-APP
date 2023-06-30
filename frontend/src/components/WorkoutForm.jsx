@@ -10,6 +10,7 @@ const [newWorkout, setNewWorkout] = useState({
 const { dispatch } = useWorkoutsContext()
 const [error, setError] = useState(null)
 const [loading, setLoading] = useState(false)
+const [emptyFields, setEmptyFields] = useState([])
 
 const handleSubmit = async (e) => {
   e.preventDefault()
@@ -27,6 +28,7 @@ const handleSubmit = async (e) => {
   if(!response.ok) {
     setLoading(false)
     setError(data.error)
+    setEmptyFields(data.emptyFields)
   } else {
     dispatch({ type: 'CREATE_WORKOUT', payload: data })
     setLoading(false)
@@ -36,6 +38,7 @@ const handleSubmit = async (e) => {
       reps: ''
     })
     setError(null)
+    setEmptyFields([])
     console.log('New workout added', data)
   }
 }
@@ -52,6 +55,7 @@ const handleSubmit = async (e) => {
           title: e.target.value
         })}
         value={newWorkout.title}
+        className={emptyFields.includes('title') ? 'error' : ''}
       />
 
       
@@ -63,6 +67,7 @@ const handleSubmit = async (e) => {
           load: e.target.value
         })}
         value={newWorkout.load}
+        className={emptyFields.includes('load') ? 'error' : ''}
       />  
 
       <label>Reps:</label>
@@ -73,6 +78,7 @@ const handleSubmit = async (e) => {
           reps: e.target.value
         })}
         value={newWorkout.reps}
+        className={emptyFields.includes('reps') ? 'error' : ''}
       />
 
         {loading ? <div className="loading">{loading}</div> : <button>Add Workout</button> }

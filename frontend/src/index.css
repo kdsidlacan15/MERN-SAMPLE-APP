@@ -143,11 +143,15 @@ span.delete-button {
   cursor: pointer;
 }
 
-span.delete-button:hover {
+/* span.delete-button:hover {
   background-color: #d32f2f;
 }
 
 span.delete-button:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.3);
+} */
+
+input.error {
+  border: 1px solid var(--error)
 }
