@@ -11,7 +11,6 @@ const EditWorkoutForm = ({ workout, setVisible }) => {
     load: '',
     reps: '',
   })
-  console.log("🚀 ~ file: EditWorkoutForm.jsx:14 ~ EditWorkoutForm ~ updatedWorkout:", updatedWorkout)
 
   // Function to check if all values in the object are not empty
 const isEmptyValues = (obj)=> {
