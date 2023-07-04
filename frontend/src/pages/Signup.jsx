@@ -1,13 +1,25 @@
+import { useSignup } from "../hooks/useSignup"
 const { useState } = require("react")
 
 const Signup = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [credentials, setCredentials] = useState({
+    email: '',
+    password: ''
+  })
+  const {signup, error, isLoading, success} = useSignup()
+
+  const handleCredentialChange = (e, cred) => {
+    if(cred === 'email') {
+      setCredentials({...credentials, email: e.target.value})
+    } else {
+      setCredentials({...credentials, password: e.target.value})
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    console.log(email, password)
+    await signup(credentials)
   }
 
   return (
@@ -17,17 +29,19 @@ const Signup = () => {
       <label>Email:</label>
       <input
       type="email" 
-      onChange={(e) => setEmail(e.target.value)}
-      value={email}
+      onChange={(e) => handleCredentialChange(e, 'email')}
+      value={credentials.email}
       />
 
       <label>Password:</label>
       <input
       type="password" 
-      onChange={(e) => setPassword(e.target.value)}
-      value={password}
+      onChange={(e) => handleCredentialChange(e, 'password')}
+      value={credentials.password}
       />
-      <button> Sign Up </button>
+      <button disabled={isLoading}> Sign Up </button>
+      {error && <div className="error"> {error} </div>}
+      {success && <div className="success-signup">Sign up successful!</div>}
     </form>
   )
 }
