@@ -6,7 +6,7 @@ const Signup = () => {
     email: '',
     password: ''
   })
-  const {signup, error, isLoading, success} = useSignup()
+  const {signup, error, isLoading} = useSignup()
 
   const handleCredentialChange = (e, cred) => {
     if(cred === 'email') {
@@ -41,7 +41,6 @@ const Signup = () => {
       />
       <button disabled={isLoading}> Sign Up </button>
       {error && <div className="error"> {error} </div>}
-      {success && <div className="success-signup">Sign up successful!</div>}
     </form>
   )
 }
