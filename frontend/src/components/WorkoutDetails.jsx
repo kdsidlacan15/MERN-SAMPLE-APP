@@ -1,17 +1,27 @@
 import { useState } from 'react'
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 import EditWorkoutForm from './EditWorkoutForm'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 const WorkoutDetails = ({ workout }) => {
   const [ visible, setVisible ] = useState(false)
   const { dispatch } = useWorkoutsContext()
+  const { user } = useAuthContext()
   const {title, load, reps, createdAt} = workout
   const date = new Date(createdAt)
   const formattedDate = date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
   const handleClickDelete = async () => {
+
+    if (!user) {
+      return
+    }
+
     const response = await fetch(`http://localhost:4000/api/workouts/${workout._id}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${user.token}`
+      }
     })
 
     const data = await response.json()
@@ -23,7 +33,10 @@ const WorkoutDetails = ({ workout }) => {
     }
   }
   const handleClickEdit = () => {
-    setVisible(true)
+    if (user) {
+      setVisible(true)
+    }
+
   }
   return (
     <>

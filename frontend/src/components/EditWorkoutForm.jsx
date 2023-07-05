@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
+import { useAuthContext } from '../hooks/useAuthContext';
 const EditWorkoutForm = ({ workout, setVisible }) => {
 
   const { dispatch } = useWorkoutsContext()
+  const { user } = useAuthContext()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
 
@@ -42,12 +44,16 @@ const isEmptyValues = (obj)=> {
   }
 
   const handleSaveWorkout = async () => {
+    if (!user) {
+      return
+    }
     setLoading(true)
     const response = await fetch(`http://localhost:4000/api/workouts/${workout._id}`, {
       method: 'PATCH',
       body: JSON.stringify(updatedWorkout),
       headers: {
-        'Content-type': 'application/json'
+        'Content-type': 'application/json',
+        'Authorization': `Bearer ${user.token}`
       }
     })
 
