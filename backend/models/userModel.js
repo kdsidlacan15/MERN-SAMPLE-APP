@@ -36,7 +36,7 @@ userSchema.statics.signup = async function (email, password) {
 
 
   if (emailExists) {
-    throw Error('Email already exists')
+    throw Error('Email already in use')
   }
 
   // hash password
