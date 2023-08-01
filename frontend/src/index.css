@@ -1,5 +1,5 @@
 /* google font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=Vt323&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=Vt323&display=swap");
 
 /* layout */
 
@@ -49,7 +49,7 @@ header a {
   margin: 20px auto;
   padding: 20px;
   position: relative;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .workout-details h4 {
@@ -87,7 +87,8 @@ header a {
 }
 
 /* new workout form */
-label, input {
+label,
+input {
   display: block;
 }
 
@@ -137,7 +138,6 @@ div.success-signup {
   margin: 20px 0;
 }
 
-
 div.loading {
   position: absolute;
   top: 50%;
@@ -157,10 +157,13 @@ div.loading-screen {
   height: 100%; /* or specify a fixed height */
 }
 @keyframes spin {
-  0% { transform: rotate(0deg); } /* Start the rotation at 0 degrees */
-  100% { transform: rotate(360deg); } /* End the rotation at 360 degrees */
+  0% {
+    transform: rotate(0deg);
+  } /* Start the rotation at 0 degrees */
+  100% {
+    transform: rotate(360deg);
+  } /* End the rotation at 360 degrees */
 }
-
 
 /* Delete Button style */
 span.delete-button {
@@ -173,7 +176,7 @@ span.delete-button {
 }
 
 input.error {
-  border: 1px solid var(--error)
+  border: 1px solid var(--error);
 }
 
 /* Edit Form Card */
@@ -190,7 +193,6 @@ div.edit-card {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  
 }
 
 .edit-card h3 {
@@ -241,7 +243,7 @@ div.edit-card {
   border: none;
   border-radius: 4px;
   font-size: 16px;
-  background-color: #cccccc; 
+  background-color: #cccccc;
   cursor: not-allowed;
   opacity: 0.6;
 }
@@ -267,7 +269,8 @@ nav a {
   margin-left: 10px;
 }
 /* auth forms */
-form.signup, form.login {
+form.signup,
+form.login {
   max-width: 400px;
   margin: 40px auto;
   padding: 20px;
