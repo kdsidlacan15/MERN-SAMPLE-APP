@@ -31,6 +31,10 @@ $ cd mern-workout-app
 
 From root folder Install Server packages and Run Server
 
+### Note:
+
+For backend create a .env file with the same keys in env-sample.txt and input your own values
+
 ```bash
 $ cd backend
 $ npm install
