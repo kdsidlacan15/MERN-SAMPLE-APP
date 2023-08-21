@@ -20,7 +20,7 @@ A Simple workout tracker app good for learning using the MERN stack for beginner
 - MongoDB Atlas for DB.
   To Learn more about MongoDB Atlas please see [MongoDB Atlas Documentation](https://www.mongodb.com/docs/atlas/)
 
-## Installation
+## Installation/Running in your local Machine
 
 Clone Repository and enter the root folder.
 
@@ -33,7 +33,7 @@ From root folder Install Server packages and Run Server
 
 ### Note:
 
-For backend create a .env file with the same keys in env-sample.txt and input your own values
+To be able to run backend server, you must setup your own .env variables. Keys for env variables needed are saved in **env-sample.txt** file inside the backend folder.
 
 ```bash
 $ cd backend
@@ -50,3 +50,23 @@ $ npm start
 ```
 
 You can Acess the app by going to [localhost:3000](http://localhost:3000)
+
+## Running With Docker
+
+**Pull Backend Image**
+
+```bash
+$ docker pull kdsidlacan/workout-app-api:latest
+```
+
+**Pull Frontend Image**
+
+```bash
+$ docker pull kdsidlacan/workout-app-frontend:latest
+```
+
+**Start Application**
+
+```bash
+$ docker-compose up -d
+```

@@ -1,0 +1,15 @@
+version: "3"
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "4000:4000"
+    environment:
+      MONGO_URI: ${MONGO_URI}
+      PORT: ${PORT}
+      SECRET: ${SECRET}
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
