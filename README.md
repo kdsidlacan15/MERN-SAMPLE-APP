@@ -20,7 +20,7 @@ A Simple workout tracker app good for learning using the MERN stack for beginner
 - MongoDB Atlas for DB.
   To Learn more about MongoDB Atlas please see [MongoDB Atlas Documentation](https://www.mongodb.com/docs/atlas/)
 
-## Installation/Running in your local Machine
+## Running in your local Machine
 
 Clone Repository and enter the root folder.
 
@@ -33,12 +33,20 @@ From root folder Install Server packages and Run Server
 
 ### Note:
 
-To be able to run backend server, you must setup your own .env variables. Keys for env variables needed are saved in **env-sample.txt** file inside the backend folder.
+To be able to run backend server, you must create your own .env variables. Keys for env variables needed are saved in **env-sample.txt** file inside the backend folder.
 
 ```bash
 $ cd backend
 $ npm install
 $ npm run dev
+```
+
+**Example:**
+
+```bash
+MONGO_URI=<Your MongoDB Connection String>
+PORT=4000
+SECRET=<Your Secret>
 ```
 
 From root folder Install React packages and Run
@@ -53,6 +61,13 @@ You can Acess the app by going to [localhost:3000](http://localhost:3000)
 
 ## Running With Docker
 
+**Clone Repository**
+
+```bash
+$ git clone https://github.com/kdsidlacan15/mern-sample-app.git
+$ cd mern-workout-app
+```
+
 **Pull Backend Image**
 
 ```bash
@@ -63,6 +78,16 @@ $ docker pull kdsidlacan/workout-app-api:latest
 
 ```bash
 $ docker pull kdsidlacan/workout-app-frontend:latest
+```
+
+**Create .ENV file**
+
+Create .env file using your own credentials (shown in /backend/env-sample.txt)
+
+```bash
+MONGO_URI=<Your MongoDB Connection String>
+PORT=4000
+SECRET=<Your Secret>
 ```
 
 **Start Application**
