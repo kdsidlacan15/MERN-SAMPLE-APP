@@ -5,11 +5,26 @@ services:
     ports:
       - "4000:4000"
     environment:
-      MONGO_URI: ${MONGO_URI}
+      MONGO_URI: mongodb://mongo:27017/WorkoutsDB  # Update your_database_name
       PORT: ${PORT}
       SECRET: ${SECRET}
+    networks:
+      - my-network
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - my-network
 
   frontend:
     build: ./frontend
     ports:
       - "3000:80"
+    networks:
+      - my-network
+
+networks:
+  my-network:
