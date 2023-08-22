@@ -26,7 +26,7 @@ Clone Repository and enter the root folder.
 
 ```bash
 $ git clone https://github.com/kdsidlacan15/mern-sample-app.git
-$ cd mern-workout-app
+$ cd mern-sample-app
 ```
 
 From root folder Install Server packages and Run Server
@@ -65,7 +65,7 @@ You can Acess the app by going to [localhost:3000](http://localhost:3000)
 
 ```bash
 $ git clone https://github.com/kdsidlacan15/mern-sample-app.git
-$ cd mern-workout-app
+$ cd mern-sample-app
 ```
 
 **Pull Backend Image**
@@ -82,16 +82,19 @@ $ docker pull kdsidlacan/workout-app-frontend:latest
 
 **Create .ENV file**
 
-Create .env file using your own credentials (shown in /backend/env-sample.txt)
+If we are running the app with docker we don't need to create our own mongoDB conection string since it will be connecting through the docker mongo db instance (refer to docker-compose.yaml)
+
+We only need to Create .env file for PORT and SECRET
 
 ```bash
-MONGO_URI=<Your MongoDB Connection String>
 PORT=4000
-SECRET=<Your Secret>
+SECRET=<Your JWT Secret for auth>
 ```
 
-**Start Application**
+**Start Application in docker detached mode**
 
 ```bash
 $ docker-compose up -d
 ```
+
+You can Acess the app by going to [localhost:3000](http://localhost:3000)
