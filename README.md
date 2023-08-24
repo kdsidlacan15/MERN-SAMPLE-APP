@@ -84,7 +84,7 @@ $ docker pull kdsidlacan/workout-app-frontend:latest
 
 If we are running the app with docker we don't need to create our own mongoDB conection string since it will be connecting through the docker mongo db instance (refer to docker-compose.yaml)
 
-We only need to Create .env file for PORT and SECRET
+We only need to Create .env file in the root folder for PORT and SECRET
 
 ```bash
 PORT=4000
